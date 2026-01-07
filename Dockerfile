@@ -24,6 +24,7 @@ FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./BiteHack.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
+
 # Etap 4: Final - ostateczny obraz
 FROM base AS final
 WORKDIR /app
